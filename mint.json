@@ -21,39 +21,35 @@
     "name": "Get Started",
     "url": "https://github.com/mintlify/starter"
   },
-  "anchors": [
-    {
-      "name": "API Reference",
-      "icon": "rectangle-terminal",
-      "url": "api-reference"
-    },
-    {
-      "name": "Changelog",
-      "icon": "list",
-      "url": "https://mintlify.com"
-    },
-    {
-      "name": "Community",
-      "icon": "discord",
-      "url": "https://mintlify.com/community"
-    }
-  ],
+  "anchors": [],
   "navigation": [
     {
       "group": "Home",
-      "pages": ["introduction", "features"]
+      "pages": ["introduction"]
     },
     {
-      "group": "API Documentation",
-      "pages": ["api-reference/authentication"]
-    },
-    {
-      "group": "Endpoint Examples",
+      "group": "Getting Started",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "getting-started/authorization"
+      ]
+    },
+    {
+      "group": "Frameworks",
+      "pages": [
+        {
+          "group": "React",
+          "pages": [
+            "getting-started/react/usage",
+            {
+              "group": "Hooks",
+              "pages": [
+                "getting-started/react/hooks/useUserAuthorize",
+                "getting-started/react/hooks/useUser",
+                "getting-started/react/hooks/useFetchPrizes"
+              ]
+            }
+          ]
+        }
       ]
     }
   ],

@@ -1,0 +1,29 @@
+---
+title: "useUser"
+---
+
+The `useUser` hook provided by @useawards/react-dom allows you to access the currently logged in user in your React components. Here is how to use it:
+
+## Usage
+
+```jsx
+import { useUser } from '@useawards/react-dom';
+
+function MyComponent() {
+  const user = useUser();
+
+  return (
+    <div>
+      {user ? (
+        <div>Welcome, {user.name}!</div>
+      ) : (
+        <div>Please log in to continue.</div>
+      )}
+    </div>
+  );
+}
+```
+
+The `useUser` hook returns the current user object, which includes the name and email properties. If no user is currently logged in, the hook will return null.
+
+You can use the `useUser` hook anywhere within a component tree that is wrapped in the UseawardsProvider. If there is no UseawardsProvider in the tree, the useUser hook will throw an error.

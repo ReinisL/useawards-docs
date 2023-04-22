@@ -1,0 +1,34 @@
+---
+title: "useFetchPrizes"
+---
+
+The `useFetchPrizes` hook is used to fetch and return a list of prizes from the UseAwards API. It takes no arguments and returns an array with two values: an array of prizes and a boolean indicating whether the prizes are still being loaded.
+
+## Usage
+
+Here's an example of how to use the useFetchPrizes hook in a React component:
+
+```jsx
+import React from "react";
+import { useFetchPrizes } from "@useawards/react-dom";
+
+export function Prizes() {
+  const [prizes, isLoading] = useFetchPrizes();
+
+  if (isLoading) {
+    return <div>Loading prizes...</div>;
+  }
+
+  if (!prizes) {
+    return <div>Error fetching prizes</div>;
+  }
+
+  return (
+    <div>
+      {prizes.map((prize) => (
+        <div key={prize.id}>{prize.name}</div>
+      ))}
+    </div>
+  );
+}
+```

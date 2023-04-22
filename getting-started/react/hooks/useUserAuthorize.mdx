@@ -1,0 +1,30 @@
+---
+title: "useUserAuthorize"
+---
+
+The `useUserAuthorize` hook allows you to authorize a user in the Useawards system. It returns a function that takes an object with a user's name and email properties as arguments. This function either retrieves an existing user from the browser's local storage or creates a new one with the given name and email.
+
+## Usage
+Here's an example of how to use the useUserAuthorize hook in a React component:
+
+```jsx
+import { useUserAuthorize } from "@useawards/react-dom";
+import React from "react";
+
+export function Authorize() {
+  const authorize = useUserAuthorize();
+
+  const handleAuthorize = async () => {
+    await authorize({
+      name: 'John Doe',
+      email: 'john@mail.com'
+    })
+  }
+
+  return (
+    <div>
+      <button onClick={handleAuthorize}>Authorize</button>
+    </div>
+  );
+}
+```

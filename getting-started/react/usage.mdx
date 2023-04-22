@@ -1,0 +1,38 @@
+---
+title: "Usage"
+description: "Description about how to use with React framework"
+---
+
+## Installation
+To install the Useawards SDK, you can use npm or yarn. In your project directory, run one of the following commands:
+
+<CodeGroup>
+```bash npm
+npm install @useawards/client @useawards/react-dom @useawards/core
+```
+
+```bash yarn
+yarn add @useawards/client @useawards/react-dom @useawards/core
+```
+</CodeGroup>
+
+## Usage
+To use the Useawards SDK in your application, you need to import the desired package(s) and configure them with your API key:
+
+```jsx
+import { createUseawardsClient } from '@useawards/client';
+import { UseawardsProvider } from '@useawards/react-dom';
+import { createUseawards } from '@useawards/core';
+
+const client = createUseawardsClient(appId, apiKey);
+
+const useawards = createUseawards(client);
+
+function App() {
+  return (
+    <UseawardsProvider useawards={useawards}>
+      {/* Your app code here */}
+    </UseawardsProvider>
+  );
+}
+```
